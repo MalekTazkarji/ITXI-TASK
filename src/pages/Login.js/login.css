@@ -1,0 +1,121 @@
+.login-page{
+    background-image: url("../../assests/authors.jpeg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container{
+    background-image: url("./images.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    backdrop-filter: blur(50px);
+    background-color: white;
+    position: absolute;
+    top: 40vh;
+    left: 10vw;
+    height: 45vh;
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 22vw;
+}
+
+.btn-container{
+    z-index: 1;
+    margin-top: 21.9vh;
+    width:22vw;
+    min-height: fit-content;
+    display: flex;
+    justify-content: center;
+  
+}
+
+.btn-container .btn{
+    position: relative;
+    width: 15vw;
+    height: 9vh;
+    margin: 0;
+}
+
+
+.btn-container .btn .google-btn {
+    position: absolute;
+    top: 0;
+    left: 0.5vw;
+    width: 13.9vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 15px rgba(0,0,0,0.3);  
+    border-radius: 30px;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color:#fff;
+    background-color: #533e0d;
+    font-weight: 400px;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.btn-container .btn:hover .google-btn {
+    letter-spacing:  3px;
+}
+
+.btn-container .btn .google-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255,255,255,0.15),transparent);  
+    transform: skewX(45deg) translate(0);
+    transition: 0.5s;
+    filter: blur(0px);  
+}
+
+.btn-container .btn:hover .google-btn::before {
+    transform: skewX(45deg) translate(200px);
+}
+
+.btn-container .btn::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    bottom: -5px;
+    width: 30px;
+    background: grey;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.btn-container .btn:hover::before{
+    top: 0vh;
+    height: 65%;
+    width: 85%;
+    border-radius: 30px;
+}
+
+.typewriter{
+    margin:15vh 0 0 10vw;
+    width: 6.7in;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 4px solid #212121;
+	animation:text 5s steps(41)  infinite;
+}
+
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width: 6.7in; 
+  }
+}
+

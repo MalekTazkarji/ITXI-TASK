@@ -1,0 +1,13 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin: 0 10vw;
+    align-items: center;
+
+}
+
+.name{
+    font-family: sans-serif;
+}
+
