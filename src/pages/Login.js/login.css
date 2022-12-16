@@ -1,107 +1,46 @@
 .login-page{
-    background-image: url("../../assests/authors.jpeg");
+    /* background-image: url("../../assests/authors.jpeg"); */
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
-.login-container{
-    background-image: url("./images.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    backdrop-filter: blur(50px);
-    background-color: white;
-    position: absolute;
-    top: 40vh;
-    left: 10vw;
-    height: 45vh;
-    border: 5px solid black;
-    border-radius: 10px;
-    width: 22vw;
-}
-
-.btn-container{
-    z-index: 1;
-    margin-top: 21.9vh;
-    width:22vw;
-    min-height: fit-content;
+.btn {
     display: flex;
-    justify-content: center;
-  
-}
-
-.btn-container .btn{
-    position: relative;
-    width: 15vw;
-    height: 9vh;
-    margin: 0;
-}
-
-
-.btn-container .btn .google-btn {
-    position: absolute;
-    top: 0;
-    left: 0.5vw;
-    width: 13.9vw;
-    height: 6vh;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.3);  
-    border-radius: 30px;
-    padding: 10px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color:#fff;
-    background-color: #533e0d;
-    font-weight: 400px;
-    z-index: 1;
-    transition: 0.5s;
+    justify-content: center;
+    background: rgb(84, 49, 4);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition-duration: 0.4s;
+
 }
 
-.btn-container .btn:hover .google-btn {
-    letter-spacing:  3px;
+.btn:hover {
+    background: #fff;
+    box-shadow: 0px 2px 20px 10px #97B1BF;
+    color: #000;
 }
 
-.btn-container .btn .google-btn::before {
-    content: "";
+.carousel-mother-container{
+    margin-left: 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.login-container{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to left, rgba(255,255,255,0.15),transparent);  
-    transform: skewX(45deg) translate(0);
-    transition: 0.5s;
-    filter: blur(0px);  
-}
-
-.btn-container .btn:hover .google-btn::before {
-    transform: skewX(45deg) translate(200px);
-}
-
-.btn-container .btn::before{
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-    bottom: -5px;
-    width: 30px;
-    background: grey;
-    border-radius: 10px;
-    transition: 0.5s;
-}
-
-.btn-container .btn:hover::before{
-    top: 0vh;
-    height: 65%;
-    width: 85%;
-    border-radius: 30px;
+    top: 75vh;
+    left: 25vw;
 }
 
 .typewriter{
-    margin:15vh 0 0 10vw;
+    margin:15vh 0 0 8vw;
     width: 6.7in;
 	white-space: nowrap;
 	overflow: hidden;
@@ -115,7 +54,119 @@
     width: 0; 
   }
 	100% { 
-    width: 6.7in; 
+    width: 5.6in; 
   }
+}
+
+@media screen and (max-width:1514px){
+    .login-container{
+        width: 30vw;
+    }
+
+ 
+}
+@media screen and (max-width:1230px) {
+    .login-container{
+        left: 30vw;
+    }
+}
+@media  screen and (max-width:1100px) {
+    .login-container{
+        width: 40vw;
+    }
+
+ 
+    .login-page{
+        background-position: top;
+      
+    }
+}
+
+@media screen and (max-width:830px){
+    .login-container{
+        width: 60vw;
+        left: 28vw;
+    }
+  
+    .typewriter{
+        margin:15vh 0 0 10vw;
+        width: 335px;
+        font-size: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 4px solid #212121;
+        animation:text 5s steps(41)  infinite;
+    }
+    @keyframes text {
+        0% { 
+        width: 0; 
+      }
+        100% { 
+        width: 365px; 
+      }
+    }
+}
+@media screen and (max-width:700px){
+    .login-container{
+        left: 25vw;
+    }
+}
+@media screen and (max-width:640px){
+    .login-container{
+        width: 70vw;
+    }
+  
+}
+@media screen and (max-width:640px){
+    .login-container{
+        left: 20vw;
+    }
+}
+@media screen and (max-width:470px){
+    .login-container{
+        width: 90vw;
+        left: 5vw;
+    }
+    .btn{
+        width: 90vw;
+    }
+ 
+    .typewriter{
+        margin:15vh 0 0 5vw;
+        width: 300px;
+        font-size: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 4px solid #212121;
+        animation:text 5s steps(41)  infinite;
+    }
+}
+
+@media  screen and (max-width:370px) {
+    .typewriter{
+        margin:15vh 0 0 3vw;
+        font-size:medium ;
+    }
+  .btn{
+    font-size: 20px;
+  }
+  @keyframes text {
+    0% { 
+    width: 0; 
+  }
+    100% { 
+    width: 300px; 
+  }
+}
+
+    
+}
+
+@media screen and (max-width:333px){
+    .btn{
+        font-size:17px;
+    }
+
+    
 }
 
