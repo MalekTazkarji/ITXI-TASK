@@ -1,29 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Authors from './pages/authorsPage/authors';
 import Login from './pages/Login.js/login';
 import PageNotFound from './components/PageNotFound/pagenotfound';
 import Navbar from './components/navbar/navbar';
 import ScrollToTop from './components/ScrollToTop';
-import { useEffect } from 'react';
+import Preview from './components/authorComponents/Preview/Preview';
+import './App.css';
 
-function App() {
-useEffect(()=>{
-},[localStorage.getItem('Token')])
+
+const App = ()=> {
+
   return (
     <div className="App">
-     <Router>
-      <ScrollToTop/>
-     <Navbar/>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        {localStorage.getItem('Token') &&
-        <Route path="/authors" element={<Authors/>}/>
-        }
-        <Route path='*' element={<PageNotFound/>}/>
-      </Routes>
-     </Router>
+      <Router>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/bookpreview/id=:id" element={<Preview />} />
+          {localStorage.getItem('Token') &&
+            <Route path="/authors" element={<Authors />} />
+          }
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+      </Router>
     </div>
 
 

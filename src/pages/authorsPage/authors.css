@@ -1,29 +1,93 @@
+.authorpage-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ImageList {
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)) !important;
+  border-radius: 10px;
+  margin: 10vh 7vw 5vh 7vw;
+  background-color: rgb(251, 199, 88);
+}
+.book-image {
+  background-color: rgb(251, 199, 88);
+}
+
+.ImageListItem {
+  background-color: rgba(0, 0, 0, 0.113);
+  margin: 15px 15px 15px 15px;
+  transition: 0.5s;
+  height: 150px;
+}
+
+.ImageListItem:hover {
+  transform: scale(1.05);
+}
+
 .search-box {
+  position: absolute;
+  width: 470px;
+  top: 675px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(251, 199, 88);
+  height: 50px;
+  border-radius: 50px;
+  padding: 10px;
+  transition: 1s;
+}
+
+.search-btn {
+  color: white;
+  float: right;
+  width: 100px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(251, 199, 88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 2s;
+}
+
+.search-input {
+  border: none;
+  float: left;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  transition: 0.4s;
+  line-height: 50px;
+  width: 350px;
+  padding: 0 10px;
+  letter-spacing: 2px;
+  transition: 1s;
+}
+
+.search-box:hover {
+  width: 650px;
+  padding: 7px 7px;
+  letter-spacing: 5px;
+}
+.search-box:hover > .search-input {
+  width: 500px;
+}
+
+@media screen and (max-width: 630px) {
+  .search-box {
     position: absolute;
-    width: 470px;
-    top: 675px;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    width: 80vw;
+    top: 480px;
+    transform: translate(-50%, -50%);
     background: rgb(251, 199, 88);
     height: 50px;
     border-radius: 50px;
     padding: 10px;
     transition: 1s;
   }
-  
-  .search-btn {
-    color: white;
-    float: right;
-    width: 100px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgb(251, 199, 88);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 2s;
-  }
-  
+
   .search-input {
     border: none;
     float: left;
@@ -33,85 +97,28 @@
     font-size: 20px;
     transition: 0.4s;
     line-height: 50px;
-    width: 350px;
+    width: 50vw;
     padding: 0 10px;
     letter-spacing: 2px;
-    transition:1s;
+    transition: 1s;
   }
-  
   .search-box:hover {
-    width: 650px;
-    padding: 7px 7px;
-    letter-spacing: 5px;
+    width: 80vw;
   }
-  .search-box:hover > .search-input{
-    width: 500px;
+  .search-box:hover > .search-input {
+    width: 50vw;
   }
 
-  /* @media screen and (max-width:1600px){
-    .search-box {
-      position: absolute;
-      width: 470px;
-      top: 72%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      background: rgb(251, 199, 88);
-      height: 50px;
-      border-radius: 50px;
-      padding: 10px;
-      transition: 1s;
-    }
-  } */
-
-  @media screen and (max-width:630px){
-    .search-box{
-      position: absolute;
-      width: 80vw;
-      top: 480px;
-      transform: translate(-50%,-50%);
-      background: rgb(251, 199, 88);
-      height: 50px;
-      border-radius: 50px;
-      padding: 10px;
-      transition: 1s;
-  
-    }
-    .search-input {
-      border: none;
-      float: left;
-      background: none;
-      outline: none;
-      color: white;
-      font-size: 20px;
-      transition: 0.4s;
-      line-height: 50px;
-      width: 50vw;
-      padding: 0 10px;
-      letter-spacing: 2px;
-      transition:1s;
-    }
-    .search-box:hover {
-      width: 80vw;
-    }
-    .search-box:hover > .search-input{
-      width: 50vw;
-    }
-
-    .search-btn {
-      color: white;
-      float: right;
-      width: 65px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgb(251, 199, 88);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 2s;
-    }
+  .search-btn {
+    color: white;
+    float: right;
+    width: 65px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(251, 199, 88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 2s;
   }
-
-  .card-image{
-    background-color: rgba(0, 0, 0, 0.113);
-  }
- 
+}

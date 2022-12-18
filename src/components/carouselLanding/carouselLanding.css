@@ -1,58 +1,58 @@
-.item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    width: 150px;
-    background-color: #683bb7;
-    color: #fff;
-    margin: 15px;
-    font-size: 4em;
-    transition:0.4s;
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 150px;
+  background-color: rgb(84, 49, 4);
+  color: #fff;
+  margin: 15px;
+  font-size: 4em;
+  transition: 0.4s;
 }
-.item:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.item:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 .rec-dot_active {
-    background-color:rgb(84, 49, 4) !important;
-    box-shadow: 0 0 1px 3px rgb(84, 49, 4) !important;
+  background-color: rgb(84, 49, 4) !important;
+  box-shadow: 0 0 1px 3px rgb(84, 49, 4) !important;
 }
 .rec-dot:focus,
 .rec-dot:hover {
-    box-shadow: 0 0 1px 3px rgb(84, 49, 4) !important;
+  box-shadow: 0 0 1px 3px rgb(84, 49, 4) !important;
 }
 .rec-arrow {
-    background-color: rgb(84, 49, 4) !important;
-    transition: all 0.3s ease;
-    font-size: 1.1rem !important;
-    color: white !important;
-    width: 3rem !important;
-    height: 3rem !important;
-    min-width: 2rem !important;
-    line-height: 2rem !important;
+  background-color: rgb(84, 49, 4) !important;
+  transition: all 0.3s ease;
+  font-size: 1.1rem !important;
+  color: white !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  min-width: 2rem !important;
+  line-height: 2rem !important;
 }
 
 .rec-arrow:hover:not(:disabled) {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-.images-books{
-    width: 150px;
-    height: 200px;
+.images-books {
+  width: 150px;
+  height: 200px;
 }
-.carousel-container{
-    width: 50vw;
-}
-
-@media screen and (max-width:1230px){
-    .carousel-container{
-        width:70vw
-    }
+.carousel-container {
+  width: 50vw;
 }
 
-@media screen and (max-width:1000px){
-    .carousel-container{
-        width:84vw
-    }
+@media screen and (max-width: 1230px) {
+  .carousel-container {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .carousel-container {
+    width: 84vw;
+  }
 }

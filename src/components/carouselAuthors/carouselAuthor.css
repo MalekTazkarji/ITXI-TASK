@@ -1,32 +1,31 @@
-
-.carousel-text{
-    position: absolute;
-    top:300px;
-    left: 20vw;
-    font-size: 40px;
-    font-weight: 500px;
-    color: white;
-    width: 60vw;
+.carousel-text {
+  position: absolute;
+  top: 300px;
+  left: 20vw;
+  font-size: 40px;
+  font-weight: 500px;
+  color: white;
+  width: 60vw;
 }
-.images-carousel{
-    width: 100%;
-    height: 500px;
-    filter: brightness(0.3);
+.images-carousel {
+  width: 100%;
+  height: 500px;
+  filter: brightness(0.3);
 }
-@media screen and (max-width:630px){
-.images-carousel{
+@media screen and (max-width: 630px) {
+  .images-carousel {
     height: 300px;
+  }
+
+  .carousel-text {
+    top: 150px;
+    font-size: 30px;
+  }
 }
 
-    .carousel-text{
-        top:150px;
-        font-size: 30px;
-    }
-}
-
-@media screen and (max-width:375px){
-    .carousel-text{
-        font-size: 25px;
-        top: 130px;
-    }
+@media screen and (max-width: 375px) {
+  .carousel-text {
+    font-size: 25px;
+    top: 130px;
+  }
 }

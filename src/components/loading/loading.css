@@ -1,0 +1,28 @@
+@keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-spinner {
+    animation: spinner 1s linear infinite;
+  }
+  
+  .loading-title {
+    font-family: "Courier New", Courier, monospace;
+  }
+  .loading-container{
+    height: 80vh;
+    width:10vw;
+    position: absolute;
+    display: flex;
+    margin-left: 20vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+  }
+   

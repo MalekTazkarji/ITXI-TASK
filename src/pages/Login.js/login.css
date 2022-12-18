@@ -1,172 +1,159 @@
-.login-page{
-    /* background-image: url("../../assests/authors.jpeg"); */
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+.login-page {
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(84, 49, 4);
-    color: #fff;
-    padding: 1rem 3rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 2rem;
-    cursor: pointer;
-    transition-duration: 0.4s;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(84, 49, 4);
+  color: #fff;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition-duration: 0.4s;
 }
 
 .btn:hover {
-    background: #fff;
-    box-shadow: 0px 2px 20px 10px #97B1BF;
-    color: #000;
+  background: #fff;
+  box-shadow: 0px 2px 20px 10px #97b1bf;
+  color: #000;
 }
 
-.carousel-mother-container{
-    margin-left: 8vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.carousel-mother-container {
+  margin-left: 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.login-container{
-    position: absolute;
-    top: 75vh;
-    left: 25vw;
-}
-
-.typewriter{
-    margin:15vh 0 0 8vw;
-    width: 6.7in;
-	white-space: nowrap;
-	overflow: hidden;
-	border-right: 4px solid #212121;
-	animation:text 5s steps(41)  infinite;
+.login-container {
+  position: absolute;
+  top: 75vh;
+  left: 25vw;
 }
 
+.typewriter {
+  margin: 15vh 0 0 8vw;
+  width: 6.7in;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #212121;
+  animation: text 5s steps(41) infinite;
+}
 
 @keyframes text {
-	0% { 
-    width: 0; 
+  0% {
+    width: 0;
   }
-	100% { 
-    width: 5.6in; 
+  100% {
+    width: 5.6in;
   }
 }
 
-@media screen and (max-width:1514px){
-    .login-container{
-        width: 30vw;
-    }
-
- 
+@media screen and (max-width: 1514px) {
+  .login-container {
+    width: 30vw;
+  }
 }
-@media screen and (max-width:1230px) {
-    .login-container{
-        left: 30vw;
-    }
+@media screen and (max-width: 1230px) {
+  .login-container {
+    left: 30vw;
+  }
 }
-@media  screen and (max-width:1100px) {
-    .login-container{
-        width: 40vw;
-    }
+@media screen and (max-width: 1100px) {
+  .login-container {
+    width: 40vw;
+  }
 
- 
-    .login-page{
-        background-position: top;
-      
-    }
+  .login-page {
+    background-position: top;
+  }
 }
 
-@media screen and (max-width:830px){
-    .login-container{
-        width: 60vw;
-        left: 28vw;
+@media screen and (max-width: 830px) {
+  .login-container {
+    width: 60vw;
+    left: 28vw;
+  }
+
+  .typewriter {
+    margin: 15vh 0 0 10vw;
+    width: 335px;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #212121;
+    animation: text 5s steps(41) infinite;
+  }
+  @keyframes text {
+    0% {
+      width: 0;
     }
-  
-    .typewriter{
-        margin:15vh 0 0 10vw;
-        width: 335px;
-        font-size: 20px;
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 4px solid #212121;
-        animation:text 5s steps(41)  infinite;
+    100% {
+      width: 365px;
     }
-    @keyframes text {
-        0% { 
-        width: 0; 
-      }
-        100% { 
-        width: 365px; 
-      }
-    }
+  }
 }
-@media screen and (max-width:700px){
-    .login-container{
-        left: 25vw;
-    }
+@media screen and (max-width: 700px) {
+  .login-container {
+    left: 25vw;
+  }
 }
-@media screen and (max-width:640px){
-    .login-container{
-        width: 70vw;
-    }
-  
+@media screen and (max-width: 640px) {
+  .login-container {
+    width: 70vw;
+  }
 }
-@media screen and (max-width:640px){
-    .login-container{
-        left: 20vw;
-    }
+@media screen and (max-width: 640px) {
+  .login-container {
+    left: 20vw;
+  }
 }
-@media screen and (max-width:470px){
-    .login-container{
-        width: 90vw;
-        left: 5vw;
-    }
-    .btn{
-        width: 90vw;
-    }
- 
-    .typewriter{
-        margin:15vh 0 0 5vw;
-        width: 300px;
-        font-size: 20px;
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 4px solid #212121;
-        animation:text 5s steps(41)  infinite;
-    }
+@media screen and (max-width: 470px) {
+  .login-container {
+    width: 90vw;
+    left: 5vw;
+  }
+  .btn {
+    width: 90vw;
+  }
+
+  .typewriter {
+    margin: 15vh 0 0 5vw;
+    width: 300px;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #212121;
+    animation: text 5s steps(41) infinite;
+  }
 }
 
-@media  screen and (max-width:370px) {
-    .typewriter{
-        margin:15vh 0 0 3vw;
-        font-size:medium ;
-    }
-  .btn{
+@media screen and (max-width: 370px) {
+  .typewriter {
+    margin: 15vh 0 0 3vw;
+    font-size: medium;
+  }
+  .btn {
     font-size: 20px;
   }
   @keyframes text {
-    0% { 
-    width: 0; 
-  }
-    100% { 
-    width: 300px; 
-  }
-}
-
-    
-}
-
-@media screen and (max-width:333px){
-    .btn{
-        font-size:17px;
+    0% {
+      width: 0;
     }
-
-    
+    100% {
+      width: 300px;
+    }
+  }
 }
 
+@media screen and (max-width: 333px) {
+  .btn {
+    font-size: 17px;
+  }
+}
