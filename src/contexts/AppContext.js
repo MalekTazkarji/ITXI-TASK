@@ -4,6 +4,7 @@ import { createContext } from "react";
 export const Context = createContext();
 
 const ContextProvider = (props) => {
+  const [Token,setToken] = useState('');
   const [books, setbooks] = useState([]);
   const [search, setSearch] = useState("");
   // fetching get request from the web api (google books api)
@@ -28,11 +29,13 @@ const ContextProvider = (props) => {
   };
   useEffect(() => {
     Request();
-  }, []);
+  }, [Token]);
 
   return (
     <Context.Provider
       value={{
+        Token,
+        setToken,
         books,
         setbooks,
         search,

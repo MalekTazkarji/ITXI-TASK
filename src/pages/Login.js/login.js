@@ -1,22 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useContext} from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import { useGoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
 import CarouselLanding from "../../components/carouselLanding/carouselLanding";
 import "./login.css";
-
+import { Context } from "../../contexts/AppContext";
 // const ApiKey = "AIzaSyCuuaqLB7lfZmhgt5h2QJU8jbwj9zHQ5ms";
 const clientId =
   "884274820828-arnfrfcdt1g328nmijbaslr62bftliv3.apps.googleusercontent.com";
 
 const Login = () => {
   const navigate = useNavigate();
+  const context = useContext(Context);
   const onSuccess = (res) => {
         localStorage.setItem("Token", res.accessToken);
+        context.setToken(localStorage.getItem("Token", res.accessToken));
     if (localStorage.getItem("Token", res.accessToken)) {
         navigate("/authors");
-        window.location.reload();
     }
   };
   const onFailure = (res) => {
