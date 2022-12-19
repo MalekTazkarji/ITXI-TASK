@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Authors from './pages/authorsPage/authors';
 import Login from './pages/Login.js/login';
@@ -10,7 +10,10 @@ import './App.css';
 
 
 const App = ()=> {
+  const Token = localStorage.getItem("Token");
+  useEffect(()=>{
 
+  },[Token])
   return (
     <div className="App">
       <Router>
@@ -19,10 +22,11 @@ const App = ()=> {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/bookpreview/id=:id" element={<Preview />} />
-          {localStorage.getItem('Token') &&
+          {Token?
             <Route path="/authors" element={<Authors />} />
-          }
+          :
           <Route path='*' element={<PageNotFound />} />
+  }
         </Routes>
       </Router>
     </div>

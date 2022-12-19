@@ -15,9 +15,8 @@ const Login = () => {
   const onSuccess = (res) => {
         localStorage.setItem("Token", res.accessToken);
     if (localStorage.getItem("Token", res.accessToken)) {
-      setTimeout(() => {
         navigate("/authors");
-      }, 1000);
+        window.location.reload();
     }
   };
   const onFailure = (res) => {
