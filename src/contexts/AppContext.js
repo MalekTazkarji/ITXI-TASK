@@ -4,7 +4,6 @@ import { createContext } from "react";
 export const Context = createContext();
 
 const ContextProvider = (props) => {
-  const [Token,setToken] = useState('');
   const [books, setbooks] = useState([]);
   const [search, setSearch] = useState("");
   // fetching get request from the web api (google books api)
@@ -22,6 +21,7 @@ const ContextProvider = (props) => {
         if (a.volumeInfo.publishedDate > b.volumeInfo.publishedDate) return -1;
         return 0;
       });
+      console.log(res);
       setbooks(sortedResult);
     } catch (err) {
       console.log(err);
@@ -29,13 +29,11 @@ const ContextProvider = (props) => {
   };
   useEffect(() => {
     Request();
-  }, [Token]);
+  }, []);
 
   return (
     <Context.Provider
       value={{
-        Token,
-        setToken,
         books,
         setbooks,
         search,

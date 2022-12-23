@@ -12,7 +12,8 @@ import './App.css';
 
 const App = ()=> {
  const context = useContext(Context);
- const Token = context.Token;
+ const Token = localStorage.getItem("Token");
+ console.log(Token);
   return (
     <div className="App">
       <Router>

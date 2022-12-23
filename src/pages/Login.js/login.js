@@ -14,8 +14,7 @@ const Login = () => {
   const navigate = useNavigate();
   const context = useContext(Context);
   const onSuccess = (res) => {
-        localStorage.setItem("Token", res.accessToken);
-        context.setToken(localStorage.getItem("Token", res.accessToken));
+    localStorage.setItem("Token", res.accessToken)
     if (localStorage.getItem("Token", res.accessToken)) {
         navigate("/authors");
     }
@@ -32,7 +31,7 @@ const Login = () => {
     isSignedIn: true,
   });
 
-  useEffect(() => {
+  useEffect(() => {    
     function start() {
       gapi.client.init({
         clientId: clientId,

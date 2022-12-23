@@ -37,7 +37,7 @@ const Preview = () => {
           </div>
         </div>
         <div className="btn-container">
-        <a href={`${data.accessInfo.pdf.downloadLink}`} download >
+        <a href={`${data.accessInfo.pdf.downloadLink}`} download="true" >
           <button className="btn-preview">
             download pdf</button>
             </a>
