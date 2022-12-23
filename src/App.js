@@ -1,5 +1,4 @@
-import React, { useEffect , useContext} from "react";
-import { Context } from "./contexts/AppContext";
+import React, { useEffect } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Authors from './pages/authorsPage/authors';
 import Login from './pages/Login.js/login';
@@ -11,9 +10,10 @@ import './App.css';
 
 
 const App = ()=> {
- const context = useContext(Context);
  const Token = localStorage.getItem("Token");
- console.log(Token);
+ useEffect(()=>{
+  localStorage.getItem("Token")
+ },[Token])
   return (
     <div className="App">
       <Router>

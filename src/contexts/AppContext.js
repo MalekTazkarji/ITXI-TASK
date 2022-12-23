@@ -21,7 +21,6 @@ const ContextProvider = (props) => {
         if (a.volumeInfo.publishedDate > b.volumeInfo.publishedDate) return -1;
         return 0;
       });
-      console.log(res);
       setbooks(sortedResult);
     } catch (err) {
       console.log(err);

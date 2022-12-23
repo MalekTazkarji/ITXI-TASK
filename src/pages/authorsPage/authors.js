@@ -17,8 +17,8 @@ const Authors = () => {
   const context = useContext(Context);
   const search = context.search;
   const books = context.books;
-  const getToken = localStorage.getItem("Token")
-  useEffect(() => {}, [getToken]);
+  // const getToken = localStorage.getItem("Token")
+  // useEffect(() => {}, [getToken]);
 
   return (
     <div className="authorpage-container">

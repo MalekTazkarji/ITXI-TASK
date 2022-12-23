@@ -7,8 +7,7 @@ import CarouselLanding from "../../components/carouselLanding/carouselLanding";
 import "./login.css";
 import { Context } from "../../contexts/AppContext";
 // const ApiKey = "AIzaSyCuuaqLB7lfZmhgt5h2QJU8jbwj9zHQ5ms";
-const clientId =
-  "884274820828-arnfrfcdt1g328nmijbaslr62bftliv3.apps.googleusercontent.com";
+const clientId ="884274820828-arnfrfcdt1g328nmijbaslr62bftliv3.apps.googleusercontent.com";
 
 const Login = () => {
   const navigate = useNavigate();
