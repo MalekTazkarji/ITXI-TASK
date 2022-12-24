@@ -26,6 +26,7 @@ const ContextProvider = (props) => {
       });
       setbooks(sortedResult);
     } catch (err) {
+      alert(`${search} is not found ; i will ask you politly to search for a correct author name :)`)
       console.log(err);
     }
   };

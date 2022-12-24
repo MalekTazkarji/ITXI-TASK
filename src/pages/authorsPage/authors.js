@@ -34,7 +34,6 @@ const Authors = () => {
           onKeyDown={(e) => {
             if (e.key === 'Enter'){
               context.setSearch(e.target.value);
-              console.log("kusa")
             }
           
           }}
