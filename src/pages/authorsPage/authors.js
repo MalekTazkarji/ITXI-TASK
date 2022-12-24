@@ -3,7 +3,9 @@ import { Context } from "../../contexts/AppContext";
 import CarouselAuthor from "../../components/carouselAuthors/carouselAuthor";
 import { IconContext } from "react-icons/lib";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useTheme } from "@mui/material/styles";
 import {
+  Button,
   ImageList,
   ImageListItem,
   ImageListItemBar,
@@ -11,6 +13,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./authors.css";
+import Navbar from "../../components/navbar/navbar";
 
 const Authors = () => {
   const navigate = useNavigate();
@@ -21,17 +24,20 @@ const Authors = () => {
   // useEffect(() => {}, [getToken]);
 
   return (
+    <>
     <div className="authorpage-container">
       <CarouselAuthor />
       <div className="search-box">
         <input
           defaultValue={search}
-          onChange={(e) => context.setSearch(e.target.value)}
-          // onKeyDown={(e) => {
-          //   if (e.key === 'Enter') {
-          //     context.setSearch(e.target.value)
-          //   }
-          // }}
+          // onChange={(e)=>{context.setSearch(e.target.value)}}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter'){
+              context.setSearch(e.target.value);
+              console.log("kusa")
+            }
+          
+          }}
           className="search-input"
           type="text"
           placeholder="Search for an Author"
@@ -41,24 +47,15 @@ const Authors = () => {
             <AiOutlineSearch />
           </IconContext.Provider>
         </a>
+        <Button variant="outlined"
+        sx={{color:"rgb(251, 199, 88)",backgroundColor:"rgb(84, 49, 4)",outlineColor:"black"}}
+         onClick={(e)=>context.setMoreBooks(context.moreBooks + 40)}>
+          Another Results</Button>
       </div>
+
       <ImageList cols={5} gap={5} className="ImageList">
-        {books
-          ?.filter((value) => {
-            if (search === "") {
-              return value;
-            } else if (
-              value.volumeInfo.authors &&
-              value.volumeInfo.authors
-                .join(" ")
-                .toLowerCase()
-                .includes(search.toLowerCase())
-            ) {
-              return value;
-            }
-            return "";
-          })
-          .map((book, index) => {
+
+        {books?.map((book, index) => {
             return book.volumeInfo.authors &&
               book.saleInfo.saleability === "FREE" &&
               book.saleInfo.isEbook === true ? (
@@ -88,7 +85,7 @@ const Authors = () => {
                       ))}
                       <h4 className="card-text">
                         Publisher :
-                        {book.volumeInfo.industryIdentifiers[0].identifier
+                        {book.volumeInfo?.industryIdentifiers[0]?.identifier
                           .split(":")
                           .shift()}
                       </h4>
@@ -123,7 +120,26 @@ const Authors = () => {
           })}
       </ImageList>
     </div>
+
+    </>
   );
 };
 
 export default Authors;
+
+
+
+// ?.filter((value) => {
+          //   if (search === "") {
+          //     return value;
+          //   } else if (
+          //     value.volumeInfo.authors &&
+          //     value.volumeInfo.authors
+          //       .join(" ")
+          //       .toLowerCase()
+          //       .includes(search.toLowerCase())
+          //   ) {
+          //     return value;
+          //   }
+          //   return "";
+          // })

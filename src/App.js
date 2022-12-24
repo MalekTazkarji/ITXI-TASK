@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Authors from './pages/authorsPage/authors';
 import Login from './pages/Login.js/login';
 import PageNotFound from './components/PageNotFound/pagenotfound';
 import Navbar from './components/navbar/navbar';
@@ -10,10 +9,7 @@ import './App.css';
 
 
 const App = ()=> {
- const Token = localStorage.getItem("Token");
- useEffect(()=>{
-  localStorage.getItem("Token")
- },[Token])
+
   return (
     <div className="App">
       <Router>
@@ -22,11 +18,8 @@ const App = ()=> {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/bookpreview/id=:id" element={<Preview />} />
-          {Token?
-            <Route path="/authors" element={<Authors />} />
-          :
           <Route path='*' element={<PageNotFound />} />
-  }
+
         </Routes>
       </Router>
     </div>

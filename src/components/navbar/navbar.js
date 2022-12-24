@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FiBookOpen } from "react-icons/fi";
 import { IconContext } from "react-icons";
 import { useGoogleLogout } from "react-google-login";
 import { useNavigate } from "react-router-dom";
 import "./navbar.css";
+import { Context } from "../../contexts/AppContext";
 
 const clientId ="884274820828-arnfrfcdt1g328nmijbaslr62bftliv3.apps.googleusercontent.com";
 
 const Navbar = () => {
+  const context = useContext(Context);
   const [logoutAppear, setLogoutAppear] = useState(false);
   const navigate = useNavigate();
-  const getToken = localStorage.getItem("Token");
   const onSuccess = () => {
     localStorage.removeItem("Token");
+    context.setToken('');
     navigate("/");
   };
 
@@ -23,7 +25,7 @@ const Navbar = () => {
     } else {
       setLogoutAppear(false);
     }
-  }, [getToken]);
+  }, [localStorage.getItem("Token")]);
 
   return (
     <div className="navbar">

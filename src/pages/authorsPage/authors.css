@@ -9,16 +9,20 @@
   border-radius: 10px;
   margin: 10vh 7vw 5vh 7vw;
   background-color: rgb(251, 199, 88);
+
 }
 .book-image {
   background-color: rgb(251, 199, 88);
+  max-height: 300px;
 }
 
 .ImageListItem {
   background-color: rgba(0, 0, 0, 0.113);
   margin: 15px 15px 15px 15px;
   transition: 0.5s;
-  height: 150px;
+  max-height: 700px;
+  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .ImageListItem:hover {
