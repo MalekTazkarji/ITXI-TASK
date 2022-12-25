@@ -7,7 +7,7 @@
 .ImageList {
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)) !important;
   border-radius: 10px;
-  margin: 10vh 7vw 5vh 7vw;
+  margin: 11vh 7vw 5vh 7vw;
   background-color: rgb(251, 199, 88);
 
 }
@@ -89,6 +89,7 @@
     height: 50px;
     border-radius: 50px;
     padding: 10px;
+    margin-bottom: 200px;
     transition: 1s;
   }
 
@@ -112,7 +113,9 @@
   .search-box:hover > .search-input {
     width: 50vw;
   }
-
+.ImageList{
+  margin-top: 14vh;
+}
   .search-btn {
     color: white;
     float: right;
