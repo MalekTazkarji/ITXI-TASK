@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Context } from "../../contexts/AppContext";
 import CarouselAuthor from "../../components/carouselAuthors/carouselAuthor";
 import { IconContext } from "react-icons/lib";
