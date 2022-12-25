@@ -9,7 +9,6 @@
   border-radius: 10px;
   margin: 11vh 7vw 5vh 7vw;
   background-color: rgb(251, 199, 88);
-
 }
 .book-image {
   background-color: rgb(251, 199, 88);
@@ -113,9 +112,9 @@
   .search-box:hover > .search-input {
     width: 50vw;
   }
-.ImageList{
-  margin-top: 14vh;
-}
+  .ImageList {
+    margin-top: 14vh;
+  }
   .search-btn {
     color: white;
     float: right;
