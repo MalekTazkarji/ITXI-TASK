@@ -12,14 +12,14 @@
 }
 .book-image {
   background-color: rgb(251, 199, 88);
-  max-height: 300px;
+  max-height: 350px;
 }
 
 .ImageListItem {
   background-color: rgba(0, 0, 0, 0.113);
   margin: 15px 15px 15px 15px;
   transition: 0.5s;
-  max-height: 700px;
+  max-height: fit-content;
   overflow-y: scroll;
   overflow: hidden;
 }
