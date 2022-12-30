@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
 import { Context } from "../../contexts/AppContext";
 import "./carouselLanding.css";
@@ -12,16 +12,16 @@ const CarouselLanding = ({ signIn }) => {
     { width: 768, itemsToShow: 3 },
     { width: 1200, itemsToShow: 4 },
   ];
-
+  
   return (
     <div className="carousel-container">
       <hr className="seperator" />
       <div className="carousel-wrapper">
         <Carousel autoPlaySpeed={2000} breakPoints={breakPoints}>
-          {context?.books?.slice(0, 10).map((item) => (
+          {context?.books?.slice(0, 10).map((item,index) => (
             <div
               className="item"
-              key={item.id}
+              key={index}
               onClick={() => {
                 signIn();
               }}

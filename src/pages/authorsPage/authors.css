@@ -3,6 +3,13 @@
   display: flex;
   flex-direction: column;
 }
+.pagination{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
 
 .ImageList {
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)) !important;

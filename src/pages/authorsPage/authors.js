@@ -4,14 +4,16 @@ import CarouselAuthor from "../../components/carouselAuthors/carouselAuthor";
 import { IconContext } from "react-icons/lib";
 import { AiOutlineSearch } from "react-icons/ai";
 import {
-  Button,
   ImageList,
   ImageListItem,
   ImageListItemBar,
   Rating,
 } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Pagination from "@mui/material/Pagination";
 import { useNavigate } from "react-router-dom";
 import "./authors.css";
+import NotificationBar from "../../components/notificationBar";
 
 const Authors = () => {
   const navigate = useNavigate();
@@ -20,10 +22,37 @@ const Authors = () => {
   const books = context.books;
   // const getToken = localStorage.getItem("Token")
   // useEffect(() => {}, [getToken]);
+  const [pageSize, setPageSize] = React.useState(40);
+  const [page, setPage] = React.useState(1);
+
+  React.useEffect(() => {
+    
+  }, [pageSize]);
+
+  const handleChange = (event, value) => {
+    setPage(value);
+    if (context.wholeObjBook.items) {
+      if (context.wholeObjBook.totalItems > context.moreBooks - 40) {
+        context.setMoreBooks(context.moreBooks + 20);
+        window.scrollTo({ top: 600, left: 0, behavior: "smooth" });
+      }
+    } else {
+      context.setNotify({
+        isOpen: true,
+        message: "no books more available",
+        type: "error",
+      });
+    }
+  };
 
   return (
     <>
       <div className="authorpage-container">
+        <NotificationBar
+          notify={context.notify}
+          setNotify={context.setNotify}
+        />
+
         <CarouselAuthor />
         <div className="search-box">
           <input
@@ -42,22 +71,12 @@ const Authors = () => {
               <AiOutlineSearch />
             </IconContext.Provider>
           </a>
-          <Button
-            variant="outlined"
-            sx={{
-              color: "rgb(251, 199, 88)",
-              backgroundColor: "rgb(84, 49, 4)",
-              outlineColor: "black",
-            }}
-            onClick={(e) => context.setMoreBooks(context.moreBooks + 40)}
-          >
-            Another Results
-          </Button>
         </div>
 
         <ImageList cols={5} gap={5} className="ImageList">
           {books?.map((book, index) => {
-            return book.volumeInfo.authors &&
+            return context.wholeObjBook.totalItems &&
+              book.volumeInfo.authors &&
               book.saleInfo.saleability === "FREE" &&
               book.saleInfo.isEbook === true ? (
               <ImageListItem
@@ -122,9 +141,16 @@ const Authors = () => {
           })}
         </ImageList>
       </div>
+      <div className="pagination">
+        <Typography>Page: {page}</Typography>
+        <Pagination
+          count={Math.ceil(context.wholeObjBook.totalItems / pageSize)}
+          page={page}
+          onChange={handleChange}
+        />
+      </div>
     </>
   );
 };
 
 export default Authors;
-
