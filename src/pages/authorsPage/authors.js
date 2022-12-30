@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext ,useState,useEffect} from "react";
 import { Context } from "../../contexts/AppContext";
 import CarouselAuthor from "../../components/carouselAuthors/carouselAuthor";
 import { IconContext } from "react-icons/lib";
@@ -20,18 +20,23 @@ const Authors = () => {
   const context = useContext(Context);
   const search = context.search;
   const books = context.books;
-  // const getToken = localStorage.getItem("Token")
-  // useEffect(() => {}, [getToken]);
-  const [pageSize, setPageSize] = React.useState(40);
-  const [page, setPage] = React.useState(1);
+  const [pageSize, setPageSize] = useState(40);
+  const [page, setPage] = useState(1);
 
-  React.useEffect(() => {
+  useEffect(() => {
     
   }, [pageSize]);
-
+ //HandleChange Pagination with error handling
   const handleChange = (event, value) => {
-    setPage(value);
-    if (context.wholeObjBook.items) {
+       setPage(value);
+       if(page === value){
+        context.setNotify({
+          isOpen:true,
+          message:"you are on the same page,try clicking the next number",
+          type:"error"
+        })
+       }else{
+      if (context.wholeObjBook.items) {
       if (context.wholeObjBook.totalItems > context.moreBooks - 40) {
         context.setMoreBooks(context.moreBooks + 20);
         window.scrollTo({ top: 600, left: 0, behavior: "smooth" });
@@ -42,7 +47,9 @@ const Authors = () => {
         message: "no books more available",
         type: "error",
       });
-    }
+    
+  }
+       }
   };
 
   return (
