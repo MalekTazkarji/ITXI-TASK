@@ -4,11 +4,12 @@ import Request from "../helpers/bookfetch";
 export const Context = createContext();
 
 const ContextProvider = (props) => {
-  const [Token, setToken] = useState("");
+  const [Token, setToken] = useState(localStorage.getItem("Token"));
   const [books, setbooks] = useState([]);
   const [search, setSearch] = useState("");
   const [moreBooks, setMoreBooks] = useState(0);
   const [wholeObjBook,setWholeObjBook]=useState([]);
+  const[canlogin,setCanLogin]= useState(false);
   const [notify, setNotify] = useState({
     isOpen: false,
     message: "",
@@ -50,11 +51,13 @@ const ContextProvider = (props) => {
 
   useEffect(() => {
     fetchApi();
-  }, [search, moreBooks]);
+  }, [search, moreBooks ,Token ,canlogin]);
 
   return (
     <Context.Provider
       value={{
+        canlogin,
+        setCanLogin,
         wholeObjBook,
         notify,
         setNotify,

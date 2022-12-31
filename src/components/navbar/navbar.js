@@ -14,10 +14,11 @@ const Navbar = () => {
   const navigate = useNavigate();
   const onSuccess = () => {
     localStorage.removeItem("Token");
+    localStorage.removeItem("dt");
+    localStorage.removeItem("name");
     context.setToken('');
     navigate("/");
   };
-
   const { signOut } = useGoogleLogout({ clientId, onLogoutSuccess: onSuccess });
   useEffect(() => {
     if (localStorage.getItem("Token")) {
@@ -32,7 +33,7 @@ const Navbar = () => {
       <h1 className="name">E-BOOKS</h1>
       <div className="logout-container">
         {logoutAppear && (
-          <button className="logout-btn" onClick={signOut}>
+          <button id="triggerLogout" className="logout-btn" onClick={()=>{signOut()}}>
             Logout
           </button>
         )}
