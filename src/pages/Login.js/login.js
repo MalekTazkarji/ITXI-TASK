@@ -29,22 +29,16 @@ useEffect(()=>{
   const dateNow = new Date(Date.now());
   const expiredDateToken = new Date(localStorage.getItem('dt'));
   const x = expiredDateToken - dateNow;
-  // const x = 15000;
   if(localStorage.getItem("Token")){
   setTimeout(() => {
     context.setNotify({
       isOpen: true,
-      message: `Dear ${localStorage.getItem("name")} you will logout automatically after 30 seconds`,
+      message: `Dear ${localStorage.getItem("name")} you will be logged out automatically after 30 seconds since your token was expired`,
       type:"error"
     })
    setTimeout(() => {
-      localStorage.removeItem("Token");
-      localStorage.removeItem("dt");
-      localStorage.removeItem("name");
-      context.setToken('');
-      navigate("/");
-      
-   }, 10000);      
+    document.getElementById("triggerLogout").click();
+   }, 30000);      
     }, x);   
   }
 
